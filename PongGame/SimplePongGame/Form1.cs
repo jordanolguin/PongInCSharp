@@ -61,6 +61,14 @@ namespace SimplePongGame
 
             // Handle key events for moving the paddles
             KeyDown += Form1_KeyDown;
+
+            private void GameTick(object sender, EventArgs e)
+            {
+                // Move the ball
+                // Check the collisions with the paddles
+                // Check for collisions with top and bottom
+                // Check for scoring
+            }
         }
     }
 }
