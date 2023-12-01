@@ -18,5 +18,11 @@ namespace SimplePongGame
         private PictureBox paddle1;
         private PictureBox paddle2;
         private PictureBox ball;
+
+        publicForm1()
+        {
+            InitializeComponent();
+            InitializeGame();
+        }
     }
 }
