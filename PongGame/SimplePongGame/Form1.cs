@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace SimplePongGame
 {
-    public partial class Form1 : Form1
+    public partial class Form1 : Form
     {
         private const int PaddleWidth = 20;
         private const int PaddleHeight = 100;
@@ -61,42 +61,42 @@ namespace SimplePongGame
 
             // Handle key events for moving the paddles
             KeyDown += Form1_KeyDown;
+        }
 
-            private void GameTick(object sender, EventArgs e)
+        private void GameTick(object sender, EventArgs e)
+        {
+            // Move the ball
+            ball.Left += ballSpeed * ballXSpeed;
+            ball.Top += ballSpeed * ballYSpeed;
+
+            // Check the collisions with the paddles
+            if (ball.Bounds.IntersectsWith(paddle1.Bounds) || ball.Bounds.IntersectsWith(paddle2.Bounds))
+                ballXSpeed = -ballXSpeed;
+
+            // Check for collisions with top and bottom
+            if (ball.Top <= 0 || ball.Bottom >= ClientSize.Height)
+                ballYSpeed = -ballYSpeed;
+
+            // Check for scoring
+            if (ball.Left <= 0 || ball.Right >= ClientSize.Width)
             {
-                // Move the ball
-                ball.Left += ballSpeed * ballXSpeed;
-                ball.Top += ballSpeed * ballYSpeed;
-
-                // Check the collisions with the paddles
-                if (ball.Bounds.IntersectsWith(paddle1.Bounds) || ball.Bounds.IntersectsWith(paddle2.Bounds))
-                    ballXSpeed = -ballXSpeed;
-
-                // Check for collisions with top and bottom
-                if (ball.Top <= 0 || ball.Top >= ClientSize.Height)
-                    ballYSpeed = -ballYSpeed;
-
-                // Check for scoring
-                if (ball.Left <= 0 || ball.Right >= ClientSize.Width)
-                {
-                    // Reset the ball position for the next round
-                    ball.Location = new Point(ClientSize.Width / 2 - BallSize / 2, ClientSize.Height / 2 - BallSize / 2);
-                    ballXSpeed = -ballXSpeed;
-                }
+                // Reset the ball position for the next round
+                ball.Location = new Point(ClientSize.Width / 2 - BallSize / 2, ClientSize.Height / 2 - BallSize / 2);
+                ballXSpeed = -ballXSpeed;
             }
+        }
 
-            private void Form1_KeyDown(object sender, KeyEventArgs e)
-            {
-                // Move the paddles with W/S and Up/Down keys
-                if (e.KeyCode == Keys.W && paddle1.Top > 0)
-                    paddle1.Top -= paddleSpeed;
-                if (e.KeyCode == Keys.S && paddle1.Bottom < ClientSize.Height)
-                    paddle1.Top += paddleSpeed;
-                if (e.KeyCode == Keys.Up && paddle2.Top > 0)
-                    paddle2.Top -= paddleSpeed;
-                if (e.KeyCode == Keys.Down && paddle2.Bottom < ClientSize.Height)
-                    paddle2.Top += paddleSpeed;
-            }
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Move the paddles with W/S and Up/Down keys
+            if (e.KeyCode == Keys.W && paddle1.Top > 0)
+                paddle1.Top -= paddleSpeed;
+            if (e.KeyCode == Keys.S && paddle1.Bottom < ClientSize.Height)
+                paddle1.Top += paddleSpeed;
+            if (e.KeyCode == Keys.Up && paddle2.Top > 0)
+                paddle2.Top -= paddleSpeed;
+            if (e.KeyCode == Keys.Down && paddle2.Bottom < ClientSize.Height)
+                paddle2.Top += paddleSpeed;
         }
     }
 }
