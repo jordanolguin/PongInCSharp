@@ -24,5 +24,13 @@ namespace SimplePongGame
             InitializeComponent();
             InitializeGame();
         }
+
+        private void InitializeGame()
+        {
+            // Create paddles and ball (PictureBoxes)
+            // Add controls to the form
+            // Set up the game loop using a Timer
+            // Handle key events for moving the paddles
+        }
     }
 }
