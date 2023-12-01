@@ -69,6 +69,11 @@ namespace SimplePongGame
                 // Check for collisions with top and bottom
                 // Check for scoring
             }
+
+            private void Form1_KeyDown(object sender, KeyEventArgs e)
+            {
+                // Move the paddles with W/S and Up/Down keys
+            }
         }
     }
 }
