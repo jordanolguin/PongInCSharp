@@ -88,6 +88,14 @@ namespace SimplePongGame
             private void Form1_KeyDown(object sender, KeyEventArgs e)
             {
                 // Move the paddles with W/S and Up/Down keys
+                if (e.KeyCode == Keys.W && paddle1.Top > 0)
+                    paddle1.Top -= paddleSpeed;
+                if (e.KeyCode == Keys.S && paddle1.Bottom < ClientSize.Height)
+                    paddle1.Top += paddleSpeed;
+                if (e.KeyCode == Keys.Up && paddle2.Top > 0)
+                    paddle2.Top -= paddleSpeed;
+                if (e.KeyCode == Keys.Down && paddle2.Bottom < ClientSize.Height)
+                    paddle2.Top += paddleSpeed;
             }
         }
     }
