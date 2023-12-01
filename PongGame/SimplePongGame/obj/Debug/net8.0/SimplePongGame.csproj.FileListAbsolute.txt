@@ -1,0 +1,5 @@
+/Users/jordanolguin/Desktop/PongInCSharp/PongGame/SimplePongGame/obj/Debug/net8.0/SimplePongGame.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jordanolguin/Desktop/PongInCSharp/PongGame/SimplePongGame/obj/Debug/net8.0/SimplePongGame.AssemblyInfoInputs.cache
+/Users/jordanolguin/Desktop/PongInCSharp/PongGame/SimplePongGame/obj/Debug/net8.0/SimplePongGame.AssemblyInfo.cs
+/Users/jordanolguin/Desktop/PongInCSharp/PongGame/SimplePongGame/obj/Debug/net8.0/SimplePongGame.csproj.CoreCompileInputs.cache
+/Users/jordanolguin/Desktop/PongInCSharp/PongGame/SimplePongGame/obj/Debug/net8.0/SimplePongGame.sourcelink.json
