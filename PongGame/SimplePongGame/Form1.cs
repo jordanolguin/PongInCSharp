@@ -75,8 +75,14 @@ namespace SimplePongGame
                 // Check for collisions with top and bottom
                 if (ball.Top <= 0 || ball.Top >= ClientSize.Height)
                     ballYSpeed = -ballYSpeed;
-                    
+
                 // Check for scoring
+                if (ball.Left <= 0 || ball.Right >= ClientSize.Width)
+                {
+                    // Reset the ball position for the next round
+                    ball.Location = new Point(ClientSize.Width / 2 - BallSize / 2, ClientSize.Height / 2 - BallSize / 2);
+                    ballXSpeed = -ballXSpeed;
+                }
             }
 
             private void Form1_KeyDown(object sender, KeyEventArgs e)
