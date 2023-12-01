@@ -65,6 +65,9 @@ namespace SimplePongGame
             private void GameTick(object sender, EventArgs e)
             {
                 // Move the ball
+                ball.Left += ballSpeed * ballXSpeed;
+                ball.Top += ballSpeed * ballYSpeed;
+                
                 // Check the collisions with the paddles
                 // Check for collisions with top and bottom
                 // Check for scoring
