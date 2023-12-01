@@ -28,6 +28,26 @@ namespace SimplePongGame
         private void InitializeGame()
         {
             // Create paddles and ball (PictureBoxes)
+            paddle1 = new PictureBox
+            {
+                Size = new Size(PaddleWidth, PaddleHeight),
+                BackColor = Color.White,
+                Location = new Point(0, ClientSize.Height / 2 - PaddleHeight / 2)
+            };
+
+            paddle2 = new PictureBox
+            {
+                Size = new Size(PaddleWidth, PaddleHeight),
+                BackColor = Color.White,
+                Location = new Point(ClientSize.Width - PaddleWidth, ClientSize.Height / 2 - PaddleHeight / 2)
+            };
+
+            ball = new PictureBox
+            {
+                Size = new Size(BallSize, BallSize),
+                BackColor = Color.White,
+                Location = new Point(ClientSize.Width / 2 - BallSize / 2, ClientSize.Height / 2 - BallSize / 2)
+            };
             // Add controls to the form
             // Set up the game loop using a Timer
             // Handle key events for moving the paddles
