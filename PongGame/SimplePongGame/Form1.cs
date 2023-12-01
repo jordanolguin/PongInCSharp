@@ -21,7 +21,6 @@ namespace SimplePongGame
 
         public Form1()
         {
-            InitializeComponent();
             InitializeGame();
         }
 
