@@ -58,8 +58,9 @@ namespace SimplePongGame
             var gameTimer = new Timer { Interval = 16 };
             gameTimer.Tick += GameTick;
             gameTimer.Start();
-            
+
             // Handle key events for moving the paddles
+            KeyDown += Form1_KeyDown;
         }
     }
 }
