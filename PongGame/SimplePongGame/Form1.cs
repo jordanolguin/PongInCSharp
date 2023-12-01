@@ -67,8 +67,10 @@ namespace SimplePongGame
                 // Move the ball
                 ball.Left += ballSpeed * ballXSpeed;
                 ball.Top += ballSpeed * ballYSpeed;
-                
+
                 // Check the collisions with the paddles
+                if (ball.Bounds.IntersectsWith(paddle1.Bounds) || ball.Bounds.IntersectsWith(paddle2.Bounds))
+                    ballXSpeed = -ballXSpeed;
                 // Check for collisions with top and bottom
                 // Check for scoring
             }
