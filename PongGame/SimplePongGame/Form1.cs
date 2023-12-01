@@ -53,7 +53,12 @@ namespace SimplePongGame
             Controls.Add(paddle1);
             Controls.Add(paddle2);
             Controls.Add(ball);
+
             // Set up the game loop using a Timer
+            var gameTimer = new Timer { Interval = 16 };
+            gameTimer.Tick += GameTick;
+            gameTimer.Start();
+            
             // Handle key events for moving the paddles
         }
     }
