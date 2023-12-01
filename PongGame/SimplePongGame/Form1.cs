@@ -48,7 +48,11 @@ namespace SimplePongGame
                 BackColor = Color.White,
                 Location = new Point(ClientSize.Width / 2 - BallSize / 2, ClientSize.Height / 2 - BallSize / 2)
             };
+
             // Add controls to the form
+            Controls.Add(paddle1);
+            Controls.Add(paddle2);
+            Controls.Add(ball);
             // Set up the game loop using a Timer
             // Handle key events for moving the paddles
         }
